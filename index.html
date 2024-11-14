@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
       body {
         margin: 0;
@@ -19,15 +20,53 @@
       img {
         border-radius: 10px !important;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        width: 70%;
+        height: 150px;
       }
     </style>
   </head>
   <body>
+    <audio autoplay hidden>
+      <source src="haha.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
     <div class="container">
       <div class="col-xs-6 mt-5 text-center">
-        <img src="cutecat.gif" width="70%" />
+        <img src="cutecat.gif" />
       </div>
+      <div class="col-xs-6 mt-5 text-center">
+        <img src="giphy.gif" />
+      </div>
+      <div class="col-xs-6 mt-5 text-center">
+        <h3 class="fw-bold">can you please feed me? 🥺</h3>
+      </div>
+      <div class="col-xs-6 mt-5 text-center">
+        <button class="btn btn-danger btn-lg yes"><strong>YES</strong></button>
+        <button class="btn btn-danger btn-lg yes">
+          <strong>YES</strong>
+        </button>
+        <button class="btn btn-danger btn-lg yes"><strong>YES</strong></button>
+      </div>
+      <div class="col-xs-6 mt-5 text-center" id="addhere"></div>
     </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".yes").click(function () {
+          var randomImages = [
+            '<iframe src="https://giphy.com/embed/debwT1ak4tD8fociGX" width="200" height="200" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rvappstudios-thank-you-thankyou-u-debwT1ak4tD8fociGX"></a></p>',
+            '<iframe src="https://giphy.com/embed/YaeGPwwQ8lUTtGMkdP" width="200" height="200" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/silly-cat-fatfatmillycat-milly-YaeGPwwQ8lUTtGMkdP"></a></p>',
+            '<iframe src="https://giphy.com/embed/rW2VWb8s0RXZqbvAmI" width="200" height="200" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/goku-babby-guava-and-friends-babbyguavaandfriends-rW2VWb8s0RXZqbvAmI"></a></p>',
+            '<iframe src="https://giphy.com/embed/ArJ03AfHqSirrnaSPW" width="200" height="200" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/tokkingheads-wow-shocked-surprised-ArJ03AfHqSirrnaSPW"></a></p>',
+            '<iframe src="https://giphy.com/embed/M9C8PHLkh0hQxraaLG" width="200" height="200" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cat-meme-M9C8PHLkh0hQxraaLG"></a></p>',
+          ];
+
+          var randomIndex = Math.floor(Math.random() * randomImages.length);
+          var selectedImage = randomImages[randomIndex];
+
+          $("#addhere").html(selectedImage);
+        });
+      });
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
